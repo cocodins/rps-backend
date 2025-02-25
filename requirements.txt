@@ -12,6 +12,9 @@ astunparse==1.6.3
 async-lru==2.0.4
 attrs==23.1.0
 Babel==2.12.1
+pip==24.0
+setuptools>=65.5.1
+wheel
 backcall==0.2.0
 beautifulsoup4==4.12.2
 BitVector==3.5.0
