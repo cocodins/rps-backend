@@ -1,12 +1,20 @@
 import os
 import numpy as np
 import tensorflow as tf
+import gdown  # Import gdown for downloading files
 from flask import Flask, request, jsonify
 from PIL import Image
-pip install flask tensorflow pillow numpy
+
+# Define model path and Google Drive file link
+MODEL_PATH = "rock_paper_scissors_model.h5"
+DRIVE_URL = "https://drive.google.com/uc?id=1IuIwakQPtkXmvCabhXJMzqA2SSBN6he5"
+
+# Download the model if it's not available locally
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model from Google Drive...")
+    gdown.download(DRIVE_URL, MODEL_PATH, quiet=False)
 
 # Load trained model
-MODEL_PATH = "rock_paper_scissors_model.h5"
 model = tf.keras.models.load_model(MODEL_PATH)
 
 # Flask app
